@@ -1,3 +1,3 @@
-The Recovery Time Objective (RTO) for single AZ outage is 1 hour.  The RTO for a single region outage is 24 hours.
+The Recovery Time Objective (RTO) for single AZ outage is zero since the standby instance in the other AZ will automatically be switched over to handle the workload.  The RTO for a single region outage is one hour since the read replica in other zone will need promotion to a standalone instance.  This is not an automated process.
 
-The Recovery Point Objective (RPO) for a single AZ outage is 1 hour.  The RPO for a single region outage is 24 hours.
+The Recovery Point Objective (RPO) for a single AZ outage is zero since the standby instance in the other AZ is updated in realtime and contains a copy of the data.  The RPO for a single region outage 1 minute since the read replica can experience latency delay.
